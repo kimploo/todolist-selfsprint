@@ -1,0 +1,77 @@
+export const testData = [
+  {
+    id: 1,
+    title: '모든 국민은 직업선택의 자유를 가진다.',
+    completed: true,
+    createdAt: '2019-02-24T16:17:47.000Z',
+    updatedAt: '2019-02-24T16:17:47.000Z',
+    UserId: 1,
+  },
+  {
+    id: 2,
+    title:
+      '모든 국민은 인간으로서의 존엄과 가치를 가지며, 행복을 추구할 권리를 가진다.',
+    completed: true,
+    createdAt: '2019-02-24T16:17:47.000Z',
+    updatedAt: '2019-02-24T16:17:47.000Z',
+    UserId: 1,
+  },
+  {
+    id: 3,
+    title: '대한민국의 영토는 한반도와 그 부속도서로 한다.',
+    completed: false,
+    createdAt: '2019-02-24T16:17:47.000Z',
+    updatedAt: '2019-02-24T16:17:47.000Z',
+    UserId: 1,
+  },
+  {
+    id: 4,
+    title: '국가는 평생교육을 진흥하여야 한다.',
+    completed: true,
+    createdAt: '2019-02-24T16:17:47.000Z',
+    updatedAt: '2019-02-24T16:17:47.000Z',
+    UserId: 1,
+  },
+  {
+    id: 5,
+    title:
+      '형사피고인은 상당한 이유가 없는 한 지체없이 공개재판을 받을 권리를 가진다.',
+    completed: true,
+    createdAt: '2019-02-24T16:17:47.000Z',
+    updatedAt: '2019-02-24T16:17:47.000Z',
+    UserId: 1,
+  },
+  {
+    id: 6,
+    title: '모든 국민은 양심의 자유를 가진다.',
+    completed: false,
+    createdAt: '2019-02-24T16:17:47.000Z',
+    updatedAt: '2019-02-24T16:17:47.000Z',
+    UserId: 1,
+  },
+  {
+    id: 7,
+    title: '모든 국민은 인간다운 생활을 할 권리를 가진다.',
+    completed: false,
+    createdAt: '2019-02-24T16:17:47.000Z',
+    updatedAt: '2019-02-24T16:17:47.000Z',
+    UserId: 1,
+  },
+  {
+    id: 8,
+    title: '모든 국민은 통신의 비밀을 침해받지 아니한다.',
+    completed: false,
+    createdAt: '2019-02-24T16:17:47.000Z',
+    updatedAt: '2019-02-24T16:17:47.000Z',
+    UserId: 1,
+  },
+  {
+    id: 9,
+    title:
+      '여자의 근로는 특별한 보호를 받으며, 고용·임금 및 근로조건에 있어서 부당한 차별을 받지 아니한다.',
+    completed: false,
+    createdAt: '2019-02-24T16:17:47.000Z',
+    updatedAt: '2019-02-24T16:17:47.000Z',
+    UserId: 1,
+  },
+];
