@@ -1,98 +1,39 @@
-.App {
+/* The sidebar menu */
+.sidenav {
+  height: 100%; /* Full-height: remove this if you want "auto" height */
+  width: 10%; /* Set the width of the sidebar */
+  position: fixed; /* Fixed Sidebar (stay in place on scroll) */
+  z-index: 1; /* Stay on top */
+  top: 0; /* Stay at the top */
+  left: 0;
+  background-color: #26262b; /* Black */
+  color: #d4d4d4;
+  overflow-x: hidden; /* Disable horizontal scroll */
+  padding-top: 20px;
+  align-items: center;
   text-align: center;
 }
 
-.App-logo {
-  height: 40vmin;
+/* The navigation menu links */
+.sidenav span div {
+  padding: 6px 8px 6px 16px;
+  text-decoration: none;
+  font-size: 25px;
+  color: #d4d4d4;
+  display: block;
 }
 
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
+/* When you mouse over the navigation links, change their color */
+.sidenav div:hover {
+  color: #fffb00;
 }
 
-.App-link {
-  color: #09d3ac;
+.sidenav button {
+  width: 5%;
+  min-width: 30px;
+  background-color: whitesmoke;
 }
 
-a,
-abbr,
-acronym,
-address,
-applet,
-big,
-blockquote,
-body,
-caption,
-cite,
-code,
-dd,
-del,
-dfn,
-div,
-dl,
-dt,
-em,
-fieldset,
-form,
-h1,
-h2,
-h3,
-h4,
-h5,
-h6,
-html,
-iframe,
-img,
-ins,
-kbd,
-label,
-legend,
-li,
-object,
-ol,
-p,
-pre,
-q,
-s,
-samp,
-small,
-span,
-strike,
-strong,
-sub,
-sup,
-table,
-tbody,
-td,
-tfoot,
-th,
-thead,
-tr,
-tt,
-ul,
-var {
-  margin: 0;
-  padding: 0;
-  border: 0;
-  position: absolute;
-  width: 85px;
-  height: 19px;
-
-  font-family: Verdana, Geneva, Tahoma, sans-serif;
-  font-style: normal;
-  font-weight: normal;
-  font-size: 16px;
-  line-height: 19px;
-
-  color: rgba(0, 0, 0, 0.87);
-
-  font-size: 100%;
-  vertical-align: baseline;
+.sidenav button:hover {
+  background-color: yellow;
 }

@@ -1,11 +1,17 @@
+/* eslint-disable react/prop-types */
+/* eslint-disable react/destructuring-assignment */
 import React from 'react';
 import ToDoItem from './ToDoItem';
 
-const ToDoList = props => (
+const ToDoList = (props) => (
   <div>
     {/* <ToDoItem toDoData={props.toDoData} /> */}
-    {props.toDoData.map((value, index) => (
-      <ToDoItem key={index} toDoData={value} />
+    {props.data.map((value) => (
+      <ToDoItem
+        key={value.id}
+        data={value}
+        sendCompleted={props.sendCompleted}
+      />
     ))}
   </div>
 );
