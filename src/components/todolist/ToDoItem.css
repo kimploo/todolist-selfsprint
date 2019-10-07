@@ -1,15 +1,30 @@
 .ToDoItem {
   box-sizing: border-box;
   border-radius: 8px / 8px;
+  margin-top: 3px;
+  margin-bottom: 3px;
   width: 80%;
   min-width: 200px;
   max-width: 1200px;
   text-align: center;
-  align-items: center;
-  align-content: center;
   height: 50px;
-  margin: 2px;
   padding: 8px;
   background-color: hsl(227, 58%, 65%);
   color: white;
+}
+
+.ToDoItem button {
+  padding: 2px;
+  margin: 7px;
+  left: 5px;
+  position: relative;
+  box-sizing: border-box;
+  border-radius: 2px / 2px;
+  border: none;
+  font-size: calc(4px + 1vmin);
+  background-color: #f5f5f5;
+}
+
+.ToDoItem button:hover {
+  background-color: #43b581;
 }

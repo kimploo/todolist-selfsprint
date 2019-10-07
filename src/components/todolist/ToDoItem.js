@@ -8,10 +8,12 @@ class ToDoItem extends React.Component {
     this.state = {
       data: this.props.data,
       completed: this.props.data.completed,
+      count: 0,
       // data,
       // completed, // 와 ! 신기해 !
     };
     this.handleCheck = this.handleCheck.bind(this); // Don't forget to bind function!
+    this.handleDelete = this.handleDelete.bind(this);
   }
 
   handleCheck() {
@@ -22,6 +24,11 @@ class ToDoItem extends React.Component {
     });
     sendCompleted(data.id);
     // Apps에서 메소드를 내려줘서 data.id를 실행시킨다.
+  }
+
+  handleDelete() {
+    const { data } = this.state;
+    this.props.deleteToDo(data.id);
   }
 
   render() {
@@ -36,6 +43,9 @@ class ToDoItem extends React.Component {
       <div className="ToDoItem">
         <span style={changeStyle} onClick={this.handleCheck}>
           {title}
+        </span>
+        <span>
+          <button onClick={this.handleDelete}>delete</button>
         </span>
       </div>
     );

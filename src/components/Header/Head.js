@@ -20,29 +20,35 @@ class Head extends Component {
     this.setState({
       text: event.target.value,
     });
-    console.log('handleChangeInput works', event.target.value);
+    // console.log('handleChangeInput works', event.target.value);
   }
 
   handleChangeGroup(event) {
     this.setState({
       group: event.target.value,
     });
-    console.log('handleChangeGroup works', event.target.value);
+    // console.log('handleChangeGroup works', event.target.value);
   }
 
   handleSubmit(event) {
+    const { text, group } = this.state;
     event.preventDefault();
-    this.props.addToDo({
-      id: shortid.generate(),
-      title: this.state.text,
-      completed: false,
-      createdAt: new Date(),
-      updatedAt: new Date(),
-      group: this.state.group,
-    });
-    this.setState({
-      text: '',
-    });
+    if (text && group) {
+      this.props.addToDo({
+        id: shortid.generate(),
+        title: text,
+        completed: false,
+        createdAt: new Date(),
+        updatedAt: new Date(),
+        group,
+      });
+      this.setState({
+        text: '',
+        group: '',
+      });
+    } else {
+      alert('Please write Todos and belonging group');
+    }
   }
 
   checkConsole = () => {
@@ -53,7 +59,7 @@ class Head extends Component {
   render() {
     return (
       <div>
-        Procrastination sucks, Do your todos !
+        <div>Procrastination sucks, Do your todos !</div>
         <div>
           {/* <button onClick={this.checkConsole}>checkConsole</button> */}
           <input
@@ -70,7 +76,9 @@ class Head extends Component {
               placeholder="Please group of your Todos..."
             />
           </p>
-          <button onClick={this.handleSubmit}>submit</button>
+          <span>
+            <button id="submitButton" onClick={this.handleSubmit} />
+          </span>
         </div>
       </div>
     );

@@ -25,9 +25,7 @@ class MenuBar extends Component {
 
     return (
       <div className="sidenav">
-        <p>
-          <Search searchData={searchData} goBackHome={goBackHome} />
-        </p>
+        <Search searchData={searchData} goBackHome={goBackHome} />
         {filtered.map((value, index) => (
           <button onClick={() => this.props.mapFilteredData(value)} key={index}>
             {value}

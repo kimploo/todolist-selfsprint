@@ -24,6 +24,7 @@ export default class App extends React.Component {
     this.searchData = this.searchData.bind(this);
     this.goBackHome = this.goBackHome.bind(this);
     this.sendCompleted = this.sendCompleted.bind(this);
+    this.deleteToDo = this.deleteToDo.bind(this);
   }
 
   componentDidMount() {
@@ -37,7 +38,7 @@ export default class App extends React.Component {
     // });
   }
 
-  addToDo = toDoObj => {
+  addToDo = (toDoObj) => {
     const newData = [toDoObj, ...this.state.originalData];
     this.setState({
       data: newData,
@@ -58,7 +59,7 @@ export default class App extends React.Component {
 
   mapFilteredData(groupName) {
     const { data, originalData } = this.state;
-    const filteredData = data.filter(value => value.group === groupName);
+    const filteredData = data.filter((value) => value.group === groupName);
     this.setState({
       data: filteredData,
       isMainPage: false,
@@ -67,7 +68,7 @@ export default class App extends React.Component {
 
   mapCheckedData() {
     const { data, originalData } = this.state;
-    const filteredData = originalData.filter(value => value.completed === true);
+    const filteredData = originalData.filter((value) => value.completed === true);
     this.setState({
       data: filteredData,
       isMainPage: false,
@@ -77,7 +78,7 @@ export default class App extends React.Component {
   mapUncheckedData() {
     const { data, originalData } = this.state;
     const filteredData = originalData.filter(
-      value => value.completed === false,
+      (value) => value.completed === false,
     );
     this.setState({
       data: filteredData,
@@ -106,10 +107,10 @@ export default class App extends React.Component {
   goBackHome() {
     const { isMainPage, data, originalData } = this.state;
     if (!isMainPage) {
-      this.setState({
-        data: originalData,
-        isMainPage: true,
-      });
+      this.setState((state) => ({
+          data: originalData,
+          isMainPage: true,
+        }));
     }
   } // Data를 기본 데이터로 바꾸고, 메인 페이지 값을 트루로
 
@@ -135,6 +136,22 @@ export default class App extends React.Component {
         }); // 찾는 것과 아이디가 같은 것의 completed만 바꾸고 싶다.
       }
     }
+    // console.log('id', id, 'it worked?');
+  }
+
+  deleteToDo(id) {
+    const { originalData } = this.state;
+    for (let i = 0; i < originalData.length; i++) {
+      if (originalData[i].id === id) {
+        const prevArray = originalData.slice(0, i);
+        const nextArray = originalData.slice(i + 1);
+        this.setState((prevState) => ({
+          originalData: [...prevArray, ...nextArray],
+          data: prevState.originalData,
+          isMainPage: true,
+        })); // slice 후 이어붙이기.
+      }
+    }
     console.log('id', id, 'it worked?');
   }
 
@@ -144,7 +161,6 @@ export default class App extends React.Component {
     if (data === null) {
       return <div>nothing was fetched, check your code.</div>;
     }
-
     return (
       <div className="App">
         <header className="App-header">
@@ -163,9 +179,11 @@ export default class App extends React.Component {
           {/* <button onClick={this.checkConsole}>checkApp</button> */}
         </div>
         <div className="mainPage">
-          <p>
-            <ToDoList data={data} sendCompleted={this.sendCompleted} />
-          </p>
+          <ToDoList
+            data={data}
+            sendCompleted={this.sendCompleted}
+            deleteToDo={this.deleteToDo}
+          />
         </div>
       </div>
     );

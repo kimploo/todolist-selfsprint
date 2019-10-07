@@ -23,7 +23,11 @@ class Search extends Component {
   render() {
     return (
       <div>
-        <input type="text" onKeyDown={this.saveValue} />
+        <input
+          type="text"
+          onKeyDown={this.saveValue}
+          placeholder="Search your todos..."
+        />
       </div>
     );
   }
