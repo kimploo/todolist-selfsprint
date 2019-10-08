@@ -6,7 +6,6 @@ class Head extends Component {
   constructor(props) {
     super(props);
     this.state = {
-      data: '',
       text: '',
       group: '',
     };
@@ -51,10 +50,10 @@ class Head extends Component {
     }
   }
 
-  checkConsole = () => {
-    console.log('this.state.data', this.state.data);
-    console.log('this.props.data', this.props.data);
-  };
+  // checkConsole = () => {
+  //   console.log('this.state.data', this.state.data);
+  //   console.log('this.props.data', this.props.data);
+  // };
 
   render() {
     return (

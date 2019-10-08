@@ -9,11 +9,13 @@ class ToDoItem extends React.Component {
       data: this.props.data,
       completed: this.props.data.completed,
       count: 0,
+      isfresh: true,
       // data,
       // completed, // 와 ! 신기해 !
     };
     this.handleCheck = this.handleCheck.bind(this); // Don't forget to bind function!
     this.handleDelete = this.handleDelete.bind(this);
+    // this.refresh = this.refresh.bind(this);
   }
 
   handleCheck() {
@@ -29,7 +31,12 @@ class ToDoItem extends React.Component {
   handleDelete() {
     const { data } = this.state;
     this.props.deleteToDo(data.id);
+    // this.refresh();
   }
+
+  // refresh() {
+  //   this.setState((prev) => ({ isfresh: !prev.isfresh }));
+  // }
 
   render() {
     const { title } = this.props.data;
@@ -41,11 +48,9 @@ class ToDoItem extends React.Component {
 
     return (
       <div className="ToDoItem">
+        <button onClick={this.handleDelete}>delete</button>
         <span style={changeStyle} onClick={this.handleCheck}>
           {title}
-        </span>
-        <span>
-          <button onClick={this.handleDelete}>delete</button>
         </span>
       </div>
     );

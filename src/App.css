@@ -1,7 +1,5 @@
 .App {
   margin-left: 15%;
-  align-items: center;
-  text-align: center;
 }
 
 .App-header {
@@ -9,6 +7,8 @@
   margin-bottom: 20px;
   background-color: #7288da;
   box-sizing: border-box;
+  align-items: center;
+  text-align: center;
   border-radius: 8px / 8px;
   width: 80%;
   min-width: 200px;
@@ -52,9 +52,4 @@
   left: 600px;
   width: 50px;
   height: 50px;
-}
-
-.mainPage div {
-  align-items: center;
-  text-align: center;
 }

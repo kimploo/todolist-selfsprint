@@ -68,13 +68,4 @@ export const testData = [
     updatedAt: '2019-02-24T16:17:47.000Z',
     group: 3,
   },
-  {
-    id: shortid.generate(),
-    title:
-      '여자의 근로는 특별한 보호를 받으며, 고용·임금 및 근로조건에 있어서 부당한 차별을 받지 아니한다.',
-    completed: false,
-    createdAt: '2019-02-24T16:17:47.000Z',
-    updatedAt: '2019-02-24T16:17:47.000Z',
-    group: 3,
-  },
 ];

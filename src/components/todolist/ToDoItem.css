@@ -6,7 +6,8 @@
   width: 80%;
   min-width: 200px;
   max-width: 1200px;
-  text-align: center;
+  align-items: left !important;
+  text-align: left !important;
   height: 50px;
   padding: 8px;
   background-color: hsl(227, 58%, 65%);
@@ -16,7 +17,6 @@
 .ToDoItem button {
   padding: 2px;
   margin: 7px;
-  left: 5px;
   position: relative;
   box-sizing: border-box;
   border-radius: 2px / 2px;
